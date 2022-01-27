@@ -1,0 +1,24 @@
+---
+title: "Plot with plotly"
+author: "Juan P. Alzate"
+date: "1/26/2022"
+output: ioslides_presentation
+---
+
+## Dataset
+```{r}
+data(PlantGrowth)
+head(PlantGrowth)
+```
+
+```{r, results=FALSE,message=FALSE,warning=FALSE}
+library(plotly)
+```
+
+##
+```{r}
+fig<-plot_ly(data = PlantGrowth,y = ~weight,color = ~group, type = "box",
+               boxpoints = "all", jitter = 0.3, pointpos = -1.8)
+fig
+```
+
